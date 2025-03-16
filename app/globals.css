@@ -2,35 +2,35 @@
 
 @layer base {
   h1 {
-    @apply pb-6 text-center text-5xl font-medium text-slate-800 dark:text-slate-100;
+    @apply pb-6 text-center text-5xl font-medium text-slate-800;
   }
 
   h2 {
-    @apply py-6 text-4xl font-medium text-slate-700 dark:text-slate-200;
+    @apply py-6 text-4xl font-medium text-slate-700;
   }
 
   h3 {
-    @apply text-3xl text-slate-700 dark:text-slate-200;
+    @apply text-3xl text-slate-700;
   }
 
   h4 {
-    @apply text-2xl text-slate-600 dark:text-slate-300;
+    @apply text-2xl text-slate-600;
   }
 
   h5 {
-    @apply text-xl text-slate-600 dark:text-slate-300;
+    @apply text-xl text-slate-600;
   }
 
   p {
-    @apply text-lg leading-8 text-slate-600 dark:text-slate-300;
+    @apply text-lg leading-8 text-slate-600;
   }
 
   a {
-    @apply text-lg leading-8 text-slate-600 dark:text-slate-300;
+    @apply text-lg leading-8 text-slate-600;
   }
 
   ul {
-    @apply text-lg text-slate-600 dark:text-slate-300;
+    @apply text-lg text-slate-600;
   }
 
   button {
@@ -38,7 +38,7 @@
   }
 
   hr {
-    @apply rounded-md border-2 text-slate-600 dark:text-slate-300;
+    @apply rounded-md border-2 text-slate-600;
   }
 
   input {
