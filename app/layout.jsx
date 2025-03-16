@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Algorithme - MATh.en.JEANS",
-  description: "The creation of the world...",
+  description: "Une simulation pour MATh.en.JEANS",
 };
 
 export default function RootLayout({ children }) {
