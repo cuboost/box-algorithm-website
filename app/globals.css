@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  h1 {
+    @apply pb-6 text-center text-5xl font-medium text-slate-800 dark:text-slate-100;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  h2 {
+    @apply py-6 text-4xl font-medium text-slate-700 dark:text-slate-200;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h3 {
+    @apply text-3xl text-slate-700 dark:text-slate-200;
+  }
+
+  h4 {
+    @apply text-2xl text-slate-600 dark:text-slate-300;
+  }
+
+  h5 {
+    @apply text-xl text-slate-600 dark:text-slate-300;
+  }
+
+  p {
+    @apply text-lg leading-8 text-slate-600 dark:text-slate-300;
+  }
+
+  a {
+    @apply text-lg leading-8 text-slate-600 dark:text-slate-300;
+  }
+
+  ul {
+    @apply text-lg text-slate-600 dark:text-slate-300;
+  }
+
+  button {
+    @apply select-none rounded-2xl p-4 py-3 outline-none duration-200;
+  }
+
+  hr {
+    @apply rounded-md border-2 text-slate-600 dark:text-slate-300;
+  }
+
+  input {
+    @apply select-none rounded-md border-none outline-none;
   }
 }
 
+@layer components {
+  .button-outlined {
+    @apply rounded-full border-2 border-slate-800 font-medium text-slate-800 hover:bg-slate-200 active:scale-90;
+  }
+
+  .button-filled {
+    @apply rounded-full border-2 bg-slate-800 font-medium text-slate-100 hover:bg-slate-700 active:scale-90;
+  }
+
+  .button-simple {
+    @apply rounded-xl p-3 px-4 text-slate-800 duration-200 hover:bg-slate-200 focus-visible:bg-slate-200 active:scale-90 active:bg-slate-300;
+  }
+
+  .button-transition {
+    @apply rounded-full border-2 bg-slate-800 font-medium text-slate-100 hover:bg-slate-700 active:scale-90 border-2 border-slate-800;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Loader */
+.box {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  position: relative;
+  scale: 2;
+}
+
+.box:before {
+  content: "";
+  width: 48px;
+  height: 5px;
+  background: #000;
+  opacity: 0.25;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  border-radius: 50%;
+}
+
+.loading::before {
+  animation: shadow 0.8s linear infinite;
+}
+
+.error::before {
+  animation: shadow 1.2s linear infinite;
+}
+
+.box:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #474747;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+}
+
+.loading:after {
+  animation: bxSpin 0.8s linear infinite;
+}
+
+.error:after {
+  animation: bxSpin 1.2s alternate-reverse linear infinite;
+}
+
+@keyframes bxSpin {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
 }
