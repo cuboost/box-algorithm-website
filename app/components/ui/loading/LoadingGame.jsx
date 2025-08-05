@@ -24,7 +24,7 @@ export default function LoadingGame({ loadingProgression }) {
         />
       </Progress.Root>
       <h4 className="font-medium">
-        Loading Game... {Math.round(loadingProgression * 100)}%
+        Chargement de la simulation... {Math.round(loadingProgression * 100)}%
       </h4>
     </div>
   );
